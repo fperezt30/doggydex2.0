@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dog Details</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Optional: Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- PWA manifest -->
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Dog Profiles</a>
+    </div>
+  </nav>
+
+  <div class="container" id="dogContainer">
+    <!-- Dog details will be injected here by JS -->
+  </div>
+
+  <!-- Bootstrap JS + dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    const dogContainer = document.getElementById("dogContainer");
+
+    // Get dog_id from URL query param
+    const urlParams = new URLSearchParams(window.location.search);
+    const dogId = urlParams.get("dog_id");
+
+    async function fetchDog() {
+      try {
+        const res = await fetch(`https://dogprofile3.onrender.com/dogs/${dogId}`);
+        if (!res.ok) throw new Error("Dog not found");
+        const dog = await res.json();
+        displayDog(dog);
+      } catch (err) {
+        dogContainer.innerHTML = `<div class="alert alert-danger">Failed to load dog: ${err.message}</div>`;
+      }
+    }
+
+    function displayDog(dog) {
+      dogContainer.innerHTML = `
+        <div class="card mb-4">
+          <img src="${dog.dog.photo_url}" class="detail-img" alt="${dog.dog.name}">
+          <div class="card-body">
+            <h2 class="card-title">${dog.dog.name}</h2>
+            <p class="card-text"><strong>Age:</strong> ${dog.dog.age}</p>
+            <p class="card-text"><strong>Sex:</strong> ${dog.dog.sex}</p>
+            <p class="card-text"><strong>Owner:</strong> ${dog.owner.name}</p>
+            <p class="card-text"><strong>Contact:</strong> ${dog.owner.phone} (${dog.owner.preferred_contact})</p>
+            <h5>Feeding</h5>
+            <p class="card-text">Times: ${dog.feeding.times}<br>Amount: ${dog.feeding.amount}<br>Allergies: ${dog.feeding.allergies} ${dog.feeding.allergies_detail || ""}</p>
+            <h5>Walks</h5>
+            <p class="card-text">Frequency: ${dog.walks.frequency}<br>Duration: ${dog.walks.duration} min</p>
+            <h5>Behavior</h5>
+            <p class="card-text">
+              Barks at: ${dog.behavior.barks_in_reaction_to}<br>
+              Afraid of: ${dog.behavior.afraid_of}<br>
+              Remarks: ${dog.behavior.owners_remark}<br>
+              Medical: ${dog.behavior.medical_conditions}
+            </p>
+          </div>
+        </div>
+      `;
+    }
+
+    // Fetch dog details on load
+    fetchDog();
+  </script>
+</body>
+</html>
