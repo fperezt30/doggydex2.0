@@ -1,3 +1,11 @@
+
+/* Body background similar to PokeDex */
+.bg-pokedex {
+  background: linear-gradient(120deg, #ffcb05, #3b4cca);
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+}
+
 body {
   font-family: sans-serif;
   margin: 20px;
@@ -71,4 +79,60 @@ body {
 .card:hover {
   transform: translateY(-5px);
   transition: transform 0.2s;
+}
+
+/* Search bar */
+#searchInput {
+  border-radius: 12px;
+  padding: 0.75rem;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: #3b4cca;
+  border-color: #3b4cca;
+  border-radius: 8px;
+}
+
+.btn-primary:hover {
+  background-color: #2a37a2;
+  border-color: #2a37a2;
+}
+
+/* Section headers in detail page */
+h5 {
+  color: #ff1c1c;
+  margin-top: 1rem;
+}
+
+/* Detail page image */
+.detail-img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto 1rem auto;
+}
+
+/* Card titles */
+.card-title {
+  font-weight: bold;
+  color: #3b4cca;
+}
+
+/* Detail page image */
+.detail-img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto 1rem auto;
+}
+
+/* Card titles */
+.card-title {
+  font-weight: bold;
+  color: #3b4cca;
 }
