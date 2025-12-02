@@ -26,13 +26,15 @@
       const e = dog.emergency || {};
 
       dogContainer.innerHTML = `
-        <div class="card mb-4">
+        
           <img src="${d.photo_url}" class="detail-img" alt="${d.name}">
+      
+        <div class="card mb-4">
           <div class="card-body">
 
-            <h2 class="card-title">${d.name}</h2>
+            <h2 class="card-title">${d.name}🐾</h2>
 
-            <h5>Profile</h5>
+            <h5>➭ Profile</h5>
             <p class="card-text">
               Age: ${d.age || "—"}<br>
               Breed: ${d.breed || "—"}<br>
@@ -41,39 +43,39 @@
               Contact: ${o.phone || "—"} (${o.preferred_contact || "—"})
             </p>
 
-            <h5>Pricing</h5>
+            <h5>➭ Pricing</h5>
             <p class="card-text">
               Last Price Board: ${p.last_price_boarding || "—"}<br>
               Last Price DayCare: ${p.last_price_day_care || "—"}<br>
               Outstanding Balance: ${p.outstanding_balance || "—"}<br>
             </p>
 
-            <h5>Feeding</h5>
+            <h5>➭ Feeding</h5>
             <p class="card-text">
               Times: ${f.times || "—"}<br>
               Amount: ${f.amount || "—"}<br>
             </p>
 
-            <h5>Walks</h5>
+            <h5>➭ Walks</h5>
             <p class="card-text">
               Frequency: ${w.frequency || "—"}<br>
               Duration: ${w.duration || "—"} min
             </p>
 
-            <h5>Behavior</h5>
+            <h5>➭ Behavior</h5>
             <p class="card-text">
               Barks at: ${b.barks_in_reaction_to || "—"}<br>
               Afraid of: ${b.afraid_of || "—"}<br>
               Remarks: ${b.owners_remark || "—"}
             </p>
 
-            <h5>Medical</h5>
+            <h5>➭ Medical</h5>
             <p class="card-text">
               Allergies: ${m.allergies || "—"} ${m.allergies_detail || ""}<br>
               Conditions: ${m.medical_condition || "—"}<br>
             </p>
 
-            <h5>Emergency</h5>
+            <h5>➭ Emergency</h5>
             <p class="card-text">
               Name contact: ${e.emergency_contact || "—"}<br>
               Phone number: ${e.phone_number || "—"}<br>
