@@ -29,7 +29,7 @@ function displayDogs(dogs) {
           <p class="card-text">
             Breed: ${dog.dog.breed}<br>
             Owner: ${dog.owner.name}<br>
-            Contact: ${dog.owner.phone} ${dog.owner.preferred_contact}
+            Contact: ${dog.owner.phone} (${dog.owner.preferred_contact})
           </p>
           <a href="dog.html?dog_id=${dog.dog_id}" class="btn btn-primary">View Details</a>
         </div>
