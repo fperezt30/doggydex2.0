@@ -1,9 +1,12 @@
-
-/* Body background similar to PokeDex */
-.bg-pokedex {
+/* ========================
+   GLOBAL + BACKGROUND
+   ======================== */
+body.bg-pokedex {
   background: linear-gradient(120deg, #ffcb05, #3b4cca);
   min-height: 100vh;
   font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 20px;
 }
 
 body {
@@ -11,83 +14,67 @@ body {
   margin: 20px;
 }
 
+/* ========================
+   DOG LIST
+   ======================== */
 .dog-list {
   display: grid;
   gap: 20px;
 }
 
-.dog-card {
-  border: 1px solid #ddd;
-  padding: 15px;
-  border-radius: 10px;
-}
-
-.dog-card img {
-  width: 120px;
-  border-radius: 10px;
-}
-
-.dog-photo {
-  width: 200px;
-  border-radius: 10px;
-}
-
+/* ========================
+   DOG CARDS
+   ======================== */
 .card {
   margin-bottom: 20px;
-}
-
-.card-img-top {
-  object-fit: cover;
-  height: 200px;
-}
-
-/* Make card images square */
-.card-img-top {
-  width: 100%;        /* full width of card */
-  aspect-ratio: 1/1;  /* force square */
-  object-fit: cover;   /* crop the image to fill square */
-}
-
-/* Make detail page image square */
-.detail-img {
-  width: 300px;       /* or any fixed size you like */
-  height: 300px;      /* force square */
-  object-fit: cover;
-  border-radius: 8px; /* optional, nice rounded corners */
-}
-
-/* Card container: ensure all cards have same height */
-.card {
-  height: 100%;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
-}
-
-/* Card image: always square */
-.card-img-top {
-  width: 100%;
-  aspect-ratio: 1/1;
-  object-fit: cover;
-}
-
-/* Card body: take remaining space */
-.card-body {
-  flex: 1;
-}
-
-/* Optional: make card hover effect */
-.card:hover {
-  transform: translateY(-5px);
+  height: 100%;
   transition: transform 0.2s;
 }
 
-/* Search bar */
-#searchInput {
-  border-radius: 12px;
-  padding: 0.75rem;
+.card:hover {
+  transform: translateY(-5px);
 }
 
-/* Buttons */
+/* Square card images */
+.card-img-top {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+/* ========================
+   DETAIL PAGE IMAGE
+   ======================== */
+.detail-img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto 1rem auto;
+}
+
+/* ========================
+   TEXT + TITLES
+   ======================== */
+.card-title {
+  font-weight: bold;
+  color: #3b4cca;
+}
+
+h5 {
+  color: #ff1c1c;
+  margin-top: 1rem;
+}
+
+/* ========================
+   BUTTONS
+   ======================== */
 .btn-primary {
   background-color: #3b4cca;
   border-color: #3b4cca;
@@ -99,40 +86,10 @@ body {
   border-color: #2a37a2;
 }
 
-/* Section headers in detail page */
-h5 {
-  color: #ff1c1c;
-  margin-top: 1rem;
-}
-
-/* Detail page image */
-.detail-img {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
+/* ========================
+   SEARCH INPUT
+   ======================== */
+#searchInput {
   border-radius: 12px;
-  display: block;
-  margin: 0 auto 1rem auto;
-}
-
-/* Card titles */
-.card-title {
-  font-weight: bold;
-  color: #3b4cca;
-}
-
-/* Detail page image */
-.detail-img {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 12px;
-  display: block;
-  margin: 0 auto 1rem auto;
-}
-
-/* Card titles */
-.card-title {
-  font-weight: bold;
-  color: #3b4cca;
+  padding: 0.75rem;
 }
