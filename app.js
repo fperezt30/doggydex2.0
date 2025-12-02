@@ -6,7 +6,7 @@ let DOGS_DATA = [];
 // Fetch dogs from API
 async function fetchDogs() {
   try {
-    const res = await fetch("https://dogprofile3.onrender.com/dogs");
+    const res = await fetch("https://apidoggydex4.onrender.com/dogs");
     DOGS_DATA = await res.json();
     displayDogs(DOGS_DATA);
   } catch (err) {
@@ -27,10 +27,9 @@ function displayDogs(dogs) {
         <div class="card-body">
           <h5 class="card-title">${dog.dog.name}</h5>
           <p class="card-text">
-            Age: ${dog.dog.age}<br>
-            Sex: ${dog.dog.sex}<br>
+            Breed: ${dog.dog.breed}<br>
             Owner: ${dog.owner.name}<br>
-            Contact: ${dog.owner.phone}
+            Contact: ${dog.owner.phone}${dog.owner.preferred_contact}
           </p>
           <a href="dog.html?dog_id=${dog.dog_id}" class="btn btn-primary">View Details</a>
         </div>
