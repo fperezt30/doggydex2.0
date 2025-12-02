@@ -16,63 +16,74 @@
     }
 
     function displayDog(dog) {
+      const d = dog.dog;
+      const o = dog.owner;
+      const p = dog.pricing_data || {};
+      const f = dog.feeding || {};
+      const w = dog.walks || {};
+      const b = dog.behavior || {};
+      const m = dog.medical || {};
+      const e = dog.emergency || {};
+
       dogContainer.innerHTML = `
         <div class="card mb-4">
-          <img src="${dog.dog.photo_url}" class="detail-img" alt="${dog.dog.name}">
+          <img src="${d.photo_url}" class="detail-img" alt="${d.name}">
           <div class="card-body">
-            <h2 class="card-title">${dog.dog.name}</h2>
+
+            <h2 class="card-title">${d.name}</h2>
+
             <h5>Profile</h5>
             <p class="card-text">
-              Age: ${dog.dog.age}<br>
-              Breed: ${dog.dog.breed}<br>
-              Sex: ${dog.dog.sex}<br>
-              Owner: ${dog.owner.name}<br>
-              Contact:${dog.owner.phone} (${dog.owner.preferred_contact})<br>
+              Age: ${d.age || "—"}<br>
+              Breed: ${d.breed || "—"}<br>
+              Sex: ${d.sex || "—"}<br>
+              Owner: ${o.name || "—"}<br>
+              Contact: ${o.phone || "—"} (${o.preferred_contact || "—"})
             </p>
-            
+
             <h5>Pricing</h5>
             <p class="card-text">
-              Last Price Board: ${dog.pricing_data.last_price_boarding}<br>
-              Last Price DayCare: ${dog.pricing_data.last_price_day_care}<br>
-              Last Price DayCare: ${dog.pricing_data.outstanding_balance}<br>
+              Last Price Board: ${p.last_price_boarding || "—"}<br>
+              Last Price DayCare: ${p.last_price_day_care || "—"}<br>
+              Outstanding Balance: ${p.outstanding_balance || "—"}<br>
             </p>
 
             <h5>Feeding</h5>
             <p class="card-text">
-              Times: ${dog.feeding.times}<br>
-              Amount: ${dog.feeding.amount}<br>
+              Times: ${f.times || "—"}<br>
+              Amount: ${f.amount || "—"}<br>
             </p>
-            
+
             <h5>Walks</h5>
             <p class="card-text">
-              Frequency: ${dog.walks.frequency}<br>
-              Duration: ${dog.walks.duration} min
+              Frequency: ${w.frequency || "—"}<br>
+              Duration: ${w.duration || "—"} min
             </p>
-            
+
             <h5>Behavior</h5>
             <p class="card-text">
-              Barks at: ${dog.behavior.barks_in_reaction_to}<br>
-              Afraid of: ${dog.behavior.afraid_of}<br>
-              Remarks: ${dog.behavior.owners_remark}<br>
+              Barks at: ${b.barks_in_reaction_to || "—"}<br>
+              Afraid of: ${b.afraid_of || "—"}<br>
+              Remarks: ${b.owners_remark || "—"}
             </p>
 
             <h5>Medical</h5>
             <p class="card-text">
-              Allergies: ${dog.medical.allergies} ${dog.medical.allergies_detail || ""}<br>
-              Conditions: ${dog.medical.medical_condition}<br>
+              Allergies: ${m.allergies || "—"} ${m.allergies_detail || ""}<br>
+              Conditions: ${m.medical_condition || "—"}<br>
             </p>
 
             <h5>Emergency</h5>
             <p class="card-text">
-              Name contact: ${dog.emergency.emergency_contact} <br>
-              Phone number: ${dog.emergency.phone_number}<br>
-              Vet name: ${dog.emergency.vet_name}<br>
-              Vet number: ${dog.emergency.vet_contact}<br>
+              Name contact: ${e.emergency_contact || "—"}<br>
+              Phone number: ${e.phone_number || "—"}<br>
+              Vet name: ${e.vet_name || "—"}<br>
+              Vet number: ${e.vet_contact || "—"}<br>
             </p>
+
           </div>
         </div>
       `;
     }
-
     // Fetch dog details on load
     fetchDog();
