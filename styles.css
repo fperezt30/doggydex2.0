@@ -100,7 +100,11 @@ h5 {
 #searchInput {
   border-radius: 12px;
   padding: 0.75rem;
+}
+
+#searchInput::placeholder {
   font-size: 1rem;
+  color: #999;
 }
 
 
