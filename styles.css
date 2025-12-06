@@ -46,6 +46,7 @@ body {
   object-fit: cover;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
+  margin-bottom: 0.25rem !important;
 }
 
 .card-link {
@@ -62,6 +63,13 @@ body {
 .card-link:hover .card {
   transform: scale(0.97); /* subtle tap feel */
   box-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
+
+.card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-top: 0.5rem !important;   /* default is 1rem */
 }
 
 /* ========================
@@ -89,7 +97,8 @@ body {
   font-weight: bold;
   color: #000000;
   font-size: 0.95rem;
-  margin-bottom: 0.3rem;
+  margin-top: 0.25rem !important;   /* default is around 0.67rem */
+  margin-bottom: 0.25rem !important;
   
 }
 
