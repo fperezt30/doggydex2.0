@@ -19,21 +19,20 @@ function displayDogs(dogs) {
   dogsContainer.innerHTML = "";
   dogs.forEach(dog => {
     const card = document.createElement("div");
-    card.className = "col-12 col-sm-6 col-md-4 mb-4";
+    card.className = "col-4 mb-4";
 
     card.innerHTML = `
+    <a href="dog.html?dog_id=${dog.dog_id}" class="card-link">
       <div class="card h-100">
         <img src="${dog.dog.photo_url}" class="card-img-top" alt="${dog.dog.name}">
         <div class="card-body">
           <h5 class="card-title">${dog.dog.name}</h5>
           <p class="card-text">
-            Breed: ${dog.dog.breed}<br>
             Owner: ${dog.owner.name}<br>
-            Contact: ${dog.owner.phone} (${dog.owner.preferred_contact})
           </p>
-          <a href="dog.html?dog_id=${dog.dog_id}" class="btn btn-primary">View Details</a>
         </div>
       </div>
+    </a>
     `;
     dogsContainer.appendChild(card);
   });

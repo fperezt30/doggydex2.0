@@ -44,8 +44,24 @@ body {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.card-link {
+  text-decoration: none;   /* no underline */
+  color: inherit;          /* keep text normal */
+  display: block;
+}
+
+/* Make hover feel like a tap/card selection */
+.card-link .card {
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.card-link:hover .card {
+  transform: scale(0.97); /* subtle tap feel */
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
 }
 
 /* ========================
@@ -72,6 +88,14 @@ body {
 .card-title {
   font-weight: bold;
   color: #000000;
+  font-size: 0.95rem;
+  margin-bottom: 0.3rem;
+  
+}
+
+.card-text {
+  font-size: 0.75rem;
+  line-height: 1.2;
 }
 
 h5 {
@@ -86,7 +110,9 @@ h5 {
 .btn-primary {
   background-color: #3b4cca;
   border-color: #3b4cca;
-  border-radius: 8px;
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  border-radius: 6px;
 }
 
 .btn-primary:hover {
@@ -116,7 +142,7 @@ h5 {
 
 /* Container */
 .container {
-    max-width: 375px;
+    max-width: 100%;
     margin: 0 auto;
     min-height: 100vh;
     display: flex;
