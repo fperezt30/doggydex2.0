@@ -28,7 +28,7 @@ function displayDogs(dogs) {
         <div class="card-body">
           <h5 class="card-title">${dog.dog.name}</h5>
           <p class="card-text">
-            Owner: ${dog.owner.name}<br>
+            ✦ ${dog.owner.name}
           </p>
         </div>
       </div>
