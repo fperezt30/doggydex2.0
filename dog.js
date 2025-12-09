@@ -32,10 +32,10 @@
         <div class="card mb-4">
           <div class="card-body">
 
-            <h2 class="card-title">${d.name}🐾</h2>
+            <h2 class="card-title-detail">${d.name}🐾</h2>
 
             <h5>➭ Profile</h5>
-            <p class="card-text">
+            <p class="card-text-detail">
               Age: ${d.age || "—"}<br>
               Breed: ${d.breed || "—"}<br>
               Sex: ${d.sex || "—"}<br>
@@ -44,39 +44,39 @@
             </p>
 
             <h5>➭ Pricing</h5>
-            <p class="card-text">
+            <p class="card-text-detail">
               Last Price Board: ${p.last_price_boarding || "—"}<br>
               Last Price DayCare: ${p.last_price_day_care || "—"}<br>
               Outstanding Balance: ${p.outstanding_balance || "—"}<br>
             </p>
 
             <h5>➭ Feeding</h5>
-            <p class="card-text">
+            <p class="card-text-detail">
               Times: ${f.times || "—"}<br>
               Amount: ${f.amount || "—"}<br>
             </p>
 
             <h5>➭ Walks</h5>
-            <p class="card-text">
+            <p class="card-text-detail">
               Frequency: ${w.frequency || "—"}<br>
               Duration: ${w.duration || "—"} min
             </p>
 
             <h5>➭ Behavior</h5>
-            <p class="card-text">
+            <p class="card-text-detail">
               Barks at: ${b.barks_in_reaction_to || "—"}<br>
               Afraid of: ${b.afraid_of || "—"}<br>
               Remarks: ${b.owners_remark || "—"}
             </p>
 
             <h5>➭ Medical</h5>
-            <p class="card-text">
+            <p class="card-text-detail">
               Allergies: ${m.allergies || "—"} ${m.allergies_detail || ""}<br>
               Conditions: ${m.medical_condition || "—"}<br>
             </p>
 
             <h5>➭ Emergency</h5>
-            <p class="card-text">
+            <p class="card-text-detail">
               Name contact: ${e.emergency_contact || "—"}<br>
               Phone number: ${e.phone_number || "—"}<br>
               Vet name: ${e.vet_name || "—"}<br>

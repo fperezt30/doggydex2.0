@@ -26,7 +26,10 @@ body {
 /* ========================
    DOG CARDS
    ======================== */
-.card {
+
+
+
+   .card {
   margin-bottom: 20px;
   border-radius: 10px;
   display: flex;
@@ -98,14 +101,24 @@ body {
   color: #000000;
   font-size: 0.95rem;
   margin-top: 0.25rem !important;   /* default is around 0.67rem */
-  margin-bottom: 0.25rem !important;
-  
+  margin-bottom: 0.25rem !important; 
+}
+
+.card-title-detail {
+  font-weight: bold;
+  color: #000000;
 }
 
 .card-text {
   font-size: 0.75rem;
   line-height: 1.2;
 }
+
+.card-text-detail {
+  font-size: 0.95rem;
+  line-height: 1.2;
+}
+
 
 h5 {
   font-weight: bold;
@@ -503,4 +516,8 @@ h5 {
     min-height: 200px;
     color: #666666;
     font-size: 14px;
+}
+
+#dogsContainer {
+  --bs-gutter-y: 2px !important;
 }

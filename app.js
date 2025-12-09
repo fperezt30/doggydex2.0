@@ -19,7 +19,7 @@ function displayDogs(dogs) {
   dogsContainer.innerHTML = "";
   dogs.forEach(dog => {
     const card = document.createElement("div");
-    card.className = "col-4 mb-4";
+    card.className = "col-4";
 
     card.innerHTML = `
     <a href="dog.html?dog_id=${dog.dog_id}" class="card-link">

@@ -3,10 +3,10 @@
    Precache app shell + image caching
 */
 
-const APP_CACHE = "app-shell-v5";
-const DOGS_CACHE = "dogs-cache-v5";
-const DOG_DETAILS_CACHE = "dog-details-cache-v5";
-const IMAGES_CACHE = "images-cache-v5";
+const APP_CACHE = "app-shell-v7";
+const DOGS_CACHE = "dogs-cache-v7";
+const DOG_DETAILS_CACHE = "dog-details-cache-v7";
+const IMAGES_CACHE = "images-cache-v7";
 
 const APP_SHELL = [
   "/",
