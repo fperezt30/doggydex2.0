@@ -101,7 +101,8 @@ body {
   color: #000000;
   font-size: 0.95rem;
   margin-top: 0.25rem !important;   /* default is around 0.67rem */
-  margin-bottom: 0.25rem !important; 
+  margin-bottom: 0.25rem !important;
+  min-height: 1.2em;  
 }
 
 .card-title-detail {
@@ -112,6 +113,7 @@ body {
 .card-text {
   font-size: 0.75rem;
   line-height: 1.2;
+  min-height: 2.4em;
 }
 
 .card-text-detail {
