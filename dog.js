@@ -6,7 +6,7 @@
 
     async function fetchDog() {
       try {
-        const res = await fetch(`https://apidoggydex4.onrender.com/dogs/${dogId}`);
+        const res = await fetch(`https://api-dogcatalog.fernandoperez.me/dogs/${dogId}`);
         if (!res.ok) throw new Error("Dog not found");
         const dog = await res.json();
         displayDog(dog);

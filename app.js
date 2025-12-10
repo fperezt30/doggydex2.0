@@ -6,7 +6,7 @@ let DOGS_DATA = [];
 // Fetch dogs from API
 async function fetchDogs() {
   try {
-    const res = await fetch("https://apidoggydex4.onrender.com/dogs");
+    const res = await fetch("https://api-dogcatalog.fernandoperez.me/dogs");
     DOGS_DATA = await res.json();
     displayDogs(DOGS_DATA);
   } catch (err) {
