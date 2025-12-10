@@ -1,8 +1,4 @@
 {
-  "templateVersion": "1.0.0",
-  "dockerfileLines": [
-    "FROM nginx:alpine",
-    "COPY . /usr/share/nginx/html",
-    "EXPOSE 80"
-  ]
+  "schemaVersion": 2,
+  "templateId": "static"
 }
